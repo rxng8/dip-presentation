@@ -7,3 +7,5 @@
 ```
 conda env create -f environment.yml
 ```
+
+- Slide: [Google Slide Here](https://docs.google.com/presentation/d/1EhEZzs0SkHvba27QOeaqpI4yvdlSRAGotNu8ano6KBw/edit?usp=sharing)
