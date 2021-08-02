@@ -108,21 +108,37 @@ def get_scale(s):
 img = cv2.imread(EIN_IMG)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 show_img(img, "Original Image")
+img = np.asarray(img)
 
 # %%
 
 ############# Image transformation
-img = np.asarray(img)
+
 height, width = img.shape[:2]
+print(height)
+print(width)
+
+# %%
 
 # Grid to represent image coordinate I(x, y)
 coords = get_grid(width, height, True).astype(np.int)
 x, y = coords[0], coords[1]
+print(coords)
+# %%
 
+# Transformation matrix which rotate 45 degree
 R = get_rotation(45)
+R 
+
+# %%
 
 warp_coords = np.round(R@coords).astype(np.int)
+warp_coords
+
+# %%
 warp_x, warp_y = warp_coords[0, :], warp_coords[1, :]
+
+# %%
 
 # Get pixels within image boundary
 indices = np.where((warp_x >= 0) & (warp_x < width) &
